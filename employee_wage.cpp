@@ -5,12 +5,16 @@ using namespace std;
 
 
 void wagecalculation(int employeetype){
-    if(employeetype == 1){
-        cout << "Employee is Full Time and his wage is "<< " " << 8 * 20 << endl;
+
+    switch(employeetype){
+        case 1:
+            cout << "Employee is Full Time and his wage is "<< " " << 8 * 20 << endl;
+            break;
+        default :
+            cout << "Employee is Part Time and his wage is" << " " << 4 * 20 << endl;
+
     }
-    if(employeetype == 0){
-        cout << "Employee is Part Time and his wage is" << " " << 4 * 20 << endl;
-    }
+
 }
 
 int main(){
@@ -21,16 +25,19 @@ int main(){
 
         int randombit = rand() % 2; 
         
-        if(randombit == 0){
-            cout << "Employee is Absent" << endl;
-        }
-        else{
-            cout << "Employee is Present" << endl;
+        switch(randombit){
 
-            int employeetype = rand() % 2;
-            wagecalculation(employeetype);
+            case 0:
+                cout << "Employee is Absent" << endl;
+                break;
+            default :
+                cout << "Employee is Present" << endl;
+
+                int employeetype = rand() % 2;
+                wagecalculation(employeetype);
+
+                
         }
-        
 
     return 0;
 }
