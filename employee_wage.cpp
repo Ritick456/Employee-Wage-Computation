@@ -3,6 +3,13 @@
 #include<time.h>
 using namespace std;
 
+
+void wagecalculation(int employeetype){
+    if(employeetype == 1){
+        cout << "Employee is Full Time and his wage is " << 8 * 20 << " " << endl;
+    }
+}
+
 int main(){
 
     cout << "Welcome to Employee-Wage-Computation" << endl;
@@ -12,11 +19,15 @@ int main(){
         int randombit = rand() % 2; 
         
         if(randombit == 0){
-            cout << "Employee is Absent" << endl;;
+            cout << "Employee is Absent" << endl;
         }
         else{
-            cout << "Employee is Present";
+            cout << "Employee is Present" << endl;
+
+            int employeetype = rand() % 2;
+            wagecalculation(employeetype);
         }
+        
 
     return 0;
 }
